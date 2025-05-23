@@ -1,0 +1,15 @@
+{"time":"2025-05-21T20:37:00.552822586-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/roy/projects/mine/experiments/fren-api/src/wandb/run-20250521_203700-hgl5otbq/logs/debug-core.log"}
+{"time":"2025-05-21T20:37:00.755611565-04:00","level":"INFO","msg":"created new stream","id":"hgl5otbq"}
+{"time":"2025-05-21T20:37:00.755653083-04:00","level":"INFO","msg":"stream: started","id":"hgl5otbq"}
+{"time":"2025-05-21T20:37:00.755727814-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"hgl5otbq"}
+{"time":"2025-05-21T20:37:00.755761107-04:00","level":"INFO","msg":"sender: started","stream_id":"hgl5otbq"}
+{"time":"2025-05-21T20:37:00.755823966-04:00","level":"INFO","msg":"handler: started","stream_id":"hgl5otbq"}
+{"time":"2025-05-21T20:37:00.928274528-04:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-21T20:37:01.067568896-04:00","level":"INFO","msg":"stream: closing","id":"hgl5otbq"}
+{"time":"2025-05-21T20:37:01.067593833-04:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-21T20:37:01.067624932-04:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-21T20:37:01.664028881-04:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-21T20:37:01.789460425-04:00","level":"INFO","msg":"handler: closed","stream_id":"hgl5otbq"}
+{"time":"2025-05-21T20:37:01.789490832-04:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hgl5otbq"}
+{"time":"2025-05-21T20:37:01.789531108-04:00","level":"INFO","msg":"sender: closed","stream_id":"hgl5otbq"}
+{"time":"2025-05-21T20:37:01.789563449-04:00","level":"INFO","msg":"stream: closed","id":"hgl5otbq"}

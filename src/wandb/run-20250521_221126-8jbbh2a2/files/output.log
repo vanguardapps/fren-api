@@ -1,0 +1,25 @@
+  0%|                                                                                                                            | 0/141 [00:00<?, ?it/s]Traceback (most recent call last):
+roy batch [{'query': 'What is 789 + 123?', 'reference': 912, 'input_ids': [2061, 318, 767, 4531, 1343, 17031, 30, 50256, 50256], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 0, 0]}, {'query': 'What is 26000 - 25678?', 'reference': 322, 'input_ids': [2061, 318, 2608, 830, 532, 1679, 30924, 30, 50256], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1, 0]}, {'query': 'What is 6889 / 83?', 'reference': 83, 'input_ids': [2061, 318, 718, 39121, 1220, 9698, 30, 50256, 50256], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 0, 0]}, {'query': 'What is 901 + 345?', 'reference': 1246, 'input_ids': [2061, 318, 860, 486, 1343, 39937, 30, 50256, 50256], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 0, 0]}, {'query': 'What is 18 x 18?', 'reference': 324, 'input_ids': [2061, 318, 1248, 2124, 1248, 30, 50256, 50256, 50256], 'attention_mask': [1, 1, 1, 1, 1, 1, 0, 0, 0]}, {'query': 'What is 1296 / 36?', 'reference': 36, 'input_ids': [2061, 318, 1105, 4846, 1220, 4570, 30, 50256, 50256], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 0, 0]}, {'query': 'What is 123 + 456?', 'reference': 579, 'input_ids': [2061, 318, 17031, 1343, 604, 3980, 30, 50256, 50256], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 0, 0]}, {'query': 'What is 890 + 234?', 'reference': 1124, 'input_ids': [2061, 318, 807, 3829, 1343, 34323, 30, 50256, 50256], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 0, 0]}]
+  File "/home/roy/projects/mine/experiments/fren-api/src/run.py", line 94, in <module>
+    ppo_trainer.train()
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 411, in train
+    data = next(iter_dataloader)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 358, in repeat_generator
+    yield from dataloader
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/accelerate/data_loader.py", line 566, in __iter__
+    current_batch = next(dataloader_iter)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 733, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 789, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/src/run.py", line 78, in data_collator
+    print(type(batch[0].input_ids))
+               ^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'input_ids'

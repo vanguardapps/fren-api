@@ -1,0 +1,48 @@
+  0%|                                                                                                                            | 0/141 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 854, in convert_to_tensors
+    tensor = as_tensor(value)
+             ^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 807, in as_tensor
+    return torch.tensor(value)
+           ^^^^^^^^^^^^^^^^^^^
+ValueError: too many dimensions 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/roy/projects/mine/experiments/fren-api/src/run.py", line 90, in <module>
+    ppo_trainer.train()
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 411, in train
+    data = next(iter_dataloader)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 358, in repeat_generator
+    yield from dataloader
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/accelerate/data_loader.py", line 566, in __iter__
+    current_batch = next(dataloader_iter)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 733, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 789, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/data/data_collator.py", line 46, in __call__
+    return self.torch_call(features)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/data/data_collator.py", line 1148, in torch_call
+    batch = pad_without_fast_tokenizer_warning(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/data/data_collator.py", line 69, in pad_without_fast_tokenizer_warning
+    padded = tokenizer.pad(*pad_args, **pad_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 3779, in pad
+    return BatchEncoding(batch_outputs, tensor_type=return_tensors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 267, in __init__
+    self.convert_to_tensors(
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 870, in convert_to_tensors
+    raise ValueError(
+ValueError: Unable to create tensor, you should probably activate truncation and/or padding with 'padding=True' 'truncation=True' to have batched tensors with the same length. Perhaps your features (`query` in this case) have excessive nesting (inputs type `list` where type `int` is expected).

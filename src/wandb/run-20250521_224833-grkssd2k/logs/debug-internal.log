@@ -1,0 +1,15 @@
+{"time":"2025-05-21T22:48:33.732459033-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/roy/projects/mine/experiments/fren-api/src/wandb/run-20250521_224833-grkssd2k/logs/debug-core.log"}
+{"time":"2025-05-21T22:48:33.927917106-04:00","level":"INFO","msg":"created new stream","id":"grkssd2k"}
+{"time":"2025-05-21T22:48:33.927948726-04:00","level":"INFO","msg":"stream: started","id":"grkssd2k"}
+{"time":"2025-05-21T22:48:33.927963113-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"grkssd2k"}
+{"time":"2025-05-21T22:48:33.928001656-04:00","level":"INFO","msg":"handler: started","stream_id":"grkssd2k"}
+{"time":"2025-05-21T22:48:33.928027655-04:00","level":"INFO","msg":"sender: started","stream_id":"grkssd2k"}
+{"time":"2025-05-21T22:48:34.201026423-04:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-21T22:48:35.486869474-04:00","level":"INFO","msg":"stream: closing","id":"grkssd2k"}
+{"time":"2025-05-21T22:48:35.486905832-04:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-21T22:48:35.486937101-04:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-21T22:48:35.887482754-04:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-21T22:48:36.03313721-04:00","level":"INFO","msg":"handler: closed","stream_id":"grkssd2k"}
+{"time":"2025-05-21T22:48:36.033186703-04:00","level":"INFO","msg":"sender: closed","stream_id":"grkssd2k"}
+{"time":"2025-05-21T22:48:36.033170833-04:00","level":"INFO","msg":"writer: Close: closed","stream_id":"grkssd2k"}
+{"time":"2025-05-21T22:48:36.033270582-04:00","level":"INFO","msg":"stream: closed","id":"grkssd2k"}

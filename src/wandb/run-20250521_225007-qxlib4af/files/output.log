@@ -1,0 +1,32 @@
+  0%|                                                                                                             | 0/141 [00:00<?, ?it/s]Traceback (most recent call last):
+roy got here
+  File "/home/roy/projects/mine/experiments/fren-api/src/run.py", line 106, in <module>
+    ppo_trainer.train()
+  File "/home/roy/miniconda3/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 464, in train
+    full_value, _, _ = get_reward(
+                       ^^^^^^^^^^^
+  File "/home/roy/miniconda3/lib/python3.12/site-packages/trl/trainer/utils.py", line 1316, in get_reward
+    reward_logits = model.score(output.hidden_states[-1])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/src/run.py", line 56, in score
+    return self.roberta(input_ids)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/miniconda3/lib/python3.12/site-packages/transformers/models/roberta/modeling_roberta.py", line 1320, in forward
+    outputs = self.roberta(
+              ^^^^^^^^^^^^^
+  File "/home/roy/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/miniconda3/lib/python3.12/site-packages/transformers/models/roberta/modeling_roberta.py", line 898, in forward
+    batch_size, seq_length = input_shape
+    ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)

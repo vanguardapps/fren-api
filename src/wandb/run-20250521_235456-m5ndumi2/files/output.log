@@ -1,0 +1,12 @@
+  0%|                                                                                                                            | 0/141 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/roy/projects/mine/experiments/fren-api/src/run.py", line 96, in <module>
+    ppo_trainer.train()
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 464, in train
+    full_value, _, _ = get_reward(
+                       ^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/utils.py", line 1205, in get_reward
+    reward_logits = model.score(output.hidden_states[-1])
+                    ^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1940, in __getattr__
+    raise AttributeError(
+AttributeError: 'RobertaForSequenceClassification' object has no attribute 'score'

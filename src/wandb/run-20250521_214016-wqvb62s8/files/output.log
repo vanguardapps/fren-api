@@ -1,0 +1,29 @@
+  0%|                                                                                                                            | 0/141 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/roy/projects/mine/experiments/fren-api/src/run.py", line 78, in <module>
+    ppo_trainer.train()
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 411, in train
+    data = next(iter_dataloader)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 358, in repeat_generator
+    yield from dataloader
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/accelerate/data_loader.py", line 566, in __iter__
+    current_batch = next(dataloader_iter)
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 733, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 789, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/data/data_collator.py", line 304, in __call__
+    batch = pad_without_fast_tokenizer_warning(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/data/data_collator.py", line 69, in pad_without_fast_tokenizer_warning
+    padded = tokenizer.pad(*pad_args, **pad_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 3694, in pad
+    raise ValueError(
+ValueError: You should supply an encoding or a list of encodings to this method that includes input_ids, but you provided ['query', 'reference']

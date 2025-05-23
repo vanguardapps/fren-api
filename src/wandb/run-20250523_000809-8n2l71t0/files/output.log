@@ -1,0 +1,8 @@
+  0%|                                                                                                                            | 0/141 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+Traceback (most recent call last):
+  File "/home/roy/projects/mine/experiments/fren-api/src/run.py", line 115, in <module>
+    ppo_trainer.train()
+  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 538, in train
+    ref_logits = ref_output.logits[:, context_length - 1 : -1]
+                 ^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'logits'
