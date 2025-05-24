@@ -8,6 +8,7 @@ pandas
 peft
 python-dotenv
 qdrant-client
+ray[rllib]
 safetensors
 tensorboard
 torch

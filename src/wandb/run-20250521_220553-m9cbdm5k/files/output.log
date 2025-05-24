@@ -1,8 +1,0 @@
-  0%|                                                                                                                            | 0/141 [00:00<?, ?it/s]You're using a GPT2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
-Traceback (most recent call last):
-  File "/home/roy/projects/mine/experiments/fren-api/src/run.py", line 93, in <module>
-    ppo_trainer.train()
-  File "/home/roy/projects/mine/experiments/fren-api/.venv/lib/python3.12/site-packages/trl/trainer/ppo_trainer.py", line 413, in train
-    queries = data["input_ids"].to(device)
-              ^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'list' object has no attribute 'to'

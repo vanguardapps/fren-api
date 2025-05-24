@@ -1,7 +1,6 @@
 import os
 import torch
 from data_df import data_df
-from datasets import Dataset
 from device import get_device
 from dotenv import load_dotenv
 from transformers import (
@@ -9,16 +8,8 @@ from transformers import (
     AutoModelForSequenceClassification,
     AutoTokenizer,
     GenerationConfig,
+    RobertaForSequenceClassification,
 )
-from trl import (
-    PPOTrainer,
-    PPOConfig,
-)
-
-
-# def base_object():
-#     return type("basic_object", (object,), {})()
-
 
 max_new_tokens = 20
 
@@ -66,18 +57,55 @@ for param in model.parameters():
     param.requires_grad = True
 
 
+class ValueModelWithScore(torch.nn.Module):
+    def __init__(self, model_name_or_path):
+        super().__init__()
+        self.roberta = AutoModelForSequenceClassification.from_pretrained(
+            model_name_or_path
+        )
+        self.model = self.roberta
+        self.base_model_prefix = self.model.base_model_prefix  # Preserve for trl
+        self.config = self.model.config
+
+    def forward(self, *args, **kwargs):
+        return self.model(*args, **kwargs)
+
+    def score(self, hidden_states):
+        return torch.randint(0, 1, (hidden_states.shape[0:2]))
+
+
 value_model_name = "roberta-base"
-value_model = AutoModelForSequenceClassification.from_pretrained(
-    value_model_name, token=token
-)
+# value_model = AutoModelForSequenceClassification.from_pretrained(
+#     value_model_name, token=token
+# )
+value_model = ValueModelWithScore(value_model_name)
 value_model.train()
 for param in value_model.parameters():
     param.requires_grad = True
 
+
+class RewardModelWithScore(torch.nn.Module):
+    def __init__(self, model_name_or_path):
+        super().__init__()
+        self.roberta = AutoModelForSequenceClassification.from_pretrained(
+            model_name_or_path
+        )
+        self.model = self.roberta
+        self.base_model_prefix = self.model.base_model_prefix  # Preserve for trl
+        self.config = self.model.config
+
+    def forward(self, *args, **kwargs):
+        return self.model(*args, **kwargs)
+
+    def score(self, hidden_states):
+        return torch.randint(0, 1, (hidden_states.shape[0],))
+
+
 reward_model_name = "roberta-base"
-reward_model = AutoModelForSequenceClassification.from_pretrained(
-    reward_model_name, token=token
-)
+# reward_model = AutoModelForSequenceClassification.from_pretrained(
+#     reward_model_name, token=token
+# )
+reward_model = RewardModelWithScore(reward_model_name)
 reward_model.eval()
 for param in reward_model.parameters():
     param.requires_grad = False
